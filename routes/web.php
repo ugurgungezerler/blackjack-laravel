@@ -1,5 +1,7 @@
 <?php
 
+use App\Games\Blackjack\Http\Controllers\GameController;
+use App\Games\Blackjack\Http\Middleware\CheckGameSession;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware('web')->group(function () {
+    Route::get('/', [GameController::class, 'index'])->name('blackjack.index');
+    Route::post('blackjack/start', [GameController::class, 'start'])->name('blackjack.start');
 
-Route::get('/', function () {
-    return view('welcome');
+    //Game actions
+    Route::middleware([CheckGameSession::class])->group(function () {
+        Route::get('blackjack/hit', [GameController::class, 'hit'])->name('blackjack.hit');
+        Route::get('blackjack/stay', [GameController::class, 'stay'])->name('blackjack.stay');
+        Route::get('blackjack/next', [GameController::class, 'next'])->name('blackjack.next');
+    });
 });
