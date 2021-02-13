@@ -2,19 +2,15 @@
 
 namespace App\Games\Blackjack\Models;
 
-
 class Card
 {
-    const TYPE_HEARTS = 'Hearts';
-    const TYPE_SPADES = 'SPADES';
-    const TYPE_CLUBS = 'CLUBS';
-    const TYPE_DIAMONDS = 'DIAMONDS';
-
-    const TYPES = [self::TYPE_HEARTS, self::TYPE_SPADES, self::TYPE_CLUBS, self::TYPE_DIAMONDS];
-
-    const CARDS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING'];
-
-    const CARD_VALUES = [
+    public const TYPE_HEARTS = 'Hearts';
+    public const TYPE_SPADES = 'SPADES';
+    public const TYPE_CLUBS = 'CLUBS';
+    public const TYPE_DIAMONDS = 'DIAMONDS';
+    public const TYPES = [self::TYPE_HEARTS, self::TYPE_SPADES, self::TYPE_CLUBS, self::TYPE_DIAMONDS];
+    public const CARDS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING'];
+    public const CARD_VALUES = [
         'A' => 11,
         '2' => 2,
         '3' => 3,

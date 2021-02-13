@@ -5,7 +5,6 @@ namespace App\Games\Blackjack\Models;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
-
 class Game
 {
     const BLACKJACK_VALUE = 21;
@@ -128,5 +127,4 @@ class Game
 
         $this->status = self::GAME_ENDED;
     }
-
 }

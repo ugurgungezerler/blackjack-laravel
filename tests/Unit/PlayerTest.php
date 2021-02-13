@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class PlayerTest extends TestCase
 {
+
     /**
      * Check player hit action
      *
@@ -56,3 +57,5 @@ class PlayerTest extends TestCase
         $this->assertTrue($game->status === Game::GAME_ENDED);
     }
 }
+
+

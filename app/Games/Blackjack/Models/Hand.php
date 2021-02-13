@@ -2,11 +2,10 @@
 
 namespace App\Games\Blackjack\Models;
 
-
 class Hand
 {
-    const ACE_MIN_VALUE = 1;
-    const ACE_MAX_VALUE = 11;
+    private const ACE_MIN_VALUE = 1;
+    private const ACE_MAX_VALUE = 11;
 
     /**
      * @var Card[]

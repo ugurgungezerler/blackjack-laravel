@@ -27,7 +27,7 @@ class GameController extends Controller
     {
         //This middleware will set current game to controller.
         $this->middleware(function ($request, $next) {
-            $this->game = session('game');
+            $this->game = session('game', null);
             return $next($request);
         });
     }
@@ -50,7 +50,7 @@ class GameController extends Controller
      */
     public function start(GameStarterRequest $request)
     {
-        if ($this->game) {
+        if (isset($this->game)) {
             session()->now('status', 'Game already started');
         } else {
             $this->gameStarter($request->input('name'));
@@ -124,5 +124,4 @@ class GameController extends Controller
         $this->game = new Game($name, Carbon::now());
         $this->game->start();
     }
-
 }
