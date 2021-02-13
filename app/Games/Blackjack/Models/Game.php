@@ -86,13 +86,18 @@ class Game
         $this->dealer->hitPlayer();
 
         //take 2 cards for dealer
-        $this->dealer->hitDealer(true);
+        $this->dealer->hitDealer(false);
         $this->dealer->hitDealer();
 
         $this->status = self::GAME_STARTED;
         $this->winner = null;
     }
 
+    /**
+     * This will check player is bust;
+     *
+     * @return bool
+     */
     public function checkPlayerBust(): bool
     {
         if ($this->playerHand->currentScore() > self::BLACKJACK_VALUE) {
@@ -104,6 +109,9 @@ class Game
         return false;
     }
 
+    /**
+     *  Calculate winner
+     */
     public function calculateWinner(): void
     {
         $dealerBust = $this->dealerHand->currentScore() > self::BLACKJACK_VALUE;

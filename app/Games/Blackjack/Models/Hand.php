@@ -13,30 +13,49 @@ class Hand
      */
     private $cards;
 
-    public function addCard(Card $card, $facingDown = false): void
+    /**
+     * Add card to hand
+     *
+     * @param Card $card
+     * @param bool $facing
+     */
+    public function addCard(Card $card, $facing = true): void
     {
-        if ($facingDown) {
-            $card->setFacingDown($facingDown);
-        }
+        $card->setFacing($facing);
         $this->cards[] = $card;
     }
 
+    /**
+     * Cards getter
+     *
+     * @return Card[]
+     */
     public function getCards(): array
     {
         return $this->cards;
     }
 
+    /**
+     * Get card values
+     *
+     * @return array
+     */
     public function values(): array
     {
         $values = [];
         foreach ($this->cards as $card) {
-            if (!$card->getFacingDown()) {
+            if ($card->getFacing()) {
                 $values[] = $card->getValue();
             }
         }
         return $values;
     }
 
+    /**
+     * Calculate current hand score
+     *
+     * @return int
+     */
     public function currentScore(): int
     {
         $values = collect($this->values());
@@ -66,8 +85,11 @@ class Hand
         }
     }
 
+    /**
+     *  Flip the card
+     */
     public function faceUpCard()
     {
-        $this->cards[0]->setFacingDown(false);
+        $this->cards[0]->setFacing(true);
     }
 }

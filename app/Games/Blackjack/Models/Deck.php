@@ -6,7 +6,6 @@ use Illuminate\Support\Collection;
 
 class Deck
 {
-
     /**
      * @var array
      */
@@ -27,7 +26,8 @@ class Deck
 
     /**
      * Cards getter
-     * @return Collection
+     *
+     * @return array
      */
     public function getCards()
     {
@@ -42,13 +42,10 @@ class Deck
     public static function generate(int $count)
     {
         $cards = [];
-
         for ($i = 0; $i < $count; $i++) {
             $deck = new self();
             $cards[] = $deck->getCards();
         }
-
         return collect($cards)->flatten();
-
     }
 }

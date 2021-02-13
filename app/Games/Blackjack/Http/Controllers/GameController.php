@@ -67,9 +67,7 @@ class GameController extends Controller
     public function hit()
     {
         $this->game->dealer->hitPlayer();
-
         $this->game->checkPlayerBust();
-
         return $this->response();
     }
 
@@ -81,7 +79,6 @@ class GameController extends Controller
     public function stay()
     {
         $this->game->dealer->hitDealerUntilToEnd();
-
         return $this->response();
     }
 
@@ -100,6 +97,7 @@ class GameController extends Controller
 
     /**
      * Redirects every action to main page
+     *
      * @return Application|RedirectResponse|Redirector
      */
     public function response()

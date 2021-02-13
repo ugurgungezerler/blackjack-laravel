@@ -10,6 +10,8 @@ class CheckGameSession
     /**
      * Handle an incoming request.
      *
+     * Check game session and redirect to begin if it is invalid.
+     *
      * @param Request $request
      * @param Closure $next
      * @return mixed
