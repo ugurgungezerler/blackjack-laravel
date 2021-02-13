@@ -4,7 +4,7 @@ namespace App\Games\Blackjack\Models;
 
 class Dealer
 {
-    const DEALER_MAX_VALUE = 17;
+    private const DEALER_MAX_VALUE = 17;
 
     /* @var Game */
     private $game;

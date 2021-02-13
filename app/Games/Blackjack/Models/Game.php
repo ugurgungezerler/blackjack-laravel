@@ -7,14 +7,14 @@ use Illuminate\Support\Collection;
 
 class Game
 {
-    const BLACKJACK_VALUE = 21;
+    public const BLACKJACK_VALUE = 21;
 
-    const PLAYER = 'PLAYER';
-    const DEALER = 'DEALER';
-    const DRAW = 'DRAW';
+    public const PLAYER = 'PLAYER';
+    public const DEALER = 'DEALER';
+    public const DRAW = 'DRAW';
 
-    const GAME_STARTED = 'GAME_STARTED';
-    const GAME_ENDED = 'GAME_ENDED';
+    public const GAME_STARTED = 'GAME_STARTED';
+    public const GAME_ENDED = 'GAME_ENDED';
 
     /**
      * @var string
