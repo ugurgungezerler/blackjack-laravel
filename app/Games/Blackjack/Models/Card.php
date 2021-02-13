@@ -25,7 +25,7 @@ class Card
 
     private $type;
     private $card;
-    private $facingDown = false;
+    private $facing = true;
 
     /**
      * Card constructor.
@@ -40,6 +40,9 @@ class Card
     }
 
     /**
+     *
+     * Get card integer value
+     *
      * @return int
      */
     public function getValue(): int
@@ -47,9 +50,14 @@ class Card
         return self::CARD_VALUES[$this->card];
     }
 
+    /**
+     * Get card short name,
+     *
+     * @return string
+     */
     public function getShortName(): string
     {
-        if ($this->facingDown) {
+        if (!$this->facing) {
             return "?";
         }
 
@@ -60,22 +68,36 @@ class Card
         }
     }
 
+    /**
+     * Type getter
+     *
+     * @return string
+     */
     public function getType(): string
     {
-        if ($this->facingDown) {
+        if (!$this->facing) {
             return "?";
         }
 
         return $this->type;
     }
 
-    public function setFacingDown(bool $facing)
+    /**
+     * Card facing setter
+     *
+     * @param bool $facing
+     */
+    public function setFacing(bool $facing): void
     {
-        $this->facingDown = $facing;
+        $this->facing = $facing;
     }
 
-    public function getFacingDown(): bool
+    /**
+     * Card facing getter
+     * @return bool
+     */
+    public function getFacing(): bool
     {
-        return $this->facingDown;
+        return $this->facing;
     }
 }
