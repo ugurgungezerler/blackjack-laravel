@@ -50,7 +50,7 @@ class Game
     /**
      * @var string
      */
-    public $status = self::GAME_STARTED;
+    public $status;
 
     /**
      * @var string

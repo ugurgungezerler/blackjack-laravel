@@ -36,6 +36,16 @@ class Hand
     }
 
     /**
+     * Cards setter
+     *
+     * @param array $cards
+     */
+    public function setCards(array $cards): void
+    {
+        $this->cards = $cards;
+    }
+
+    /**
      * Get card values
      *
      * @return array
