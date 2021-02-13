@@ -5,8 +5,15 @@ namespace App\Games\Blackjack\Models;
 
 class Card
 {
-    const TYPES = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
-    const CARDS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
+    const TYPE_HEARTS = 'Hearts';
+    const TYPE_SPADES = 'SPADES';
+    const TYPE_CLUBS = 'CLUBS';
+    const TYPE_DIAMONDS = 'DIAMONDS';
+
+    const TYPES = [self::TYPE_HEARTS, self::TYPE_SPADES, self::TYPE_CLUBS, self::TYPE_DIAMONDS];
+
+    const CARDS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING'];
+
     const CARD_VALUES = [
         'A' => 11,
         '2' => 2,
@@ -18,9 +25,9 @@ class Card
         '8' => 8,
         '9' => 9,
         '10' => 10,
-        'Jack' => 10,
-        'Queen' => 10,
-        'King' => 10,
+        'JACK' => 10,
+        'QUEEN' => 10,
+        'KING' => 10,
     ];
 
     private $type;
@@ -94,6 +101,7 @@ class Card
 
     /**
      * Card facing getter
+     *
      * @return bool
      */
     public function getFacing(): bool
